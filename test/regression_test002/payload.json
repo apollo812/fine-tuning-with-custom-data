@@ -1,0 +1,7 @@
+{
+    "api_key": null,
+    "image_url": [],
+    "language_model": "gpt-4",
+    "backend_prompt": "Can you convert this output to a latex file?",
+    "continue_conversation": true
+}

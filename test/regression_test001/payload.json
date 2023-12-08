@@ -1,0 +1,10 @@
+{
+    "api_key": null,
+    "image_url": [
+        "https://assets.hongkiat.com/uploads/ww-sunset-wallpapers/preview/sunset-desktop-wallpaper-1.jpg",
+        "https://assets.hongkiat.com/uploads/ww-sunset-wallpapers/preview/sunset-desktop-wallpaper-3.jpg"
+    ],
+    "language_model": "gpt-4",
+    "backend_prompt": "Can you revise this response for me?",
+    "continue_conversation": true
+}
