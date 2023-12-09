@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  unit:
+    build:
+      context: ..
+      dockerfile: api/Dockerfile
+      target: test
+    volumes:
+      - ../api:/home/user/api
+
+  integration:
+    build:
+      context: ..
+      dockerfile: api/Dockerfile
+      target: test
+    volumes:
+      - ../api:/home/user/api

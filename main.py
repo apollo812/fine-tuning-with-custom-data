@@ -7,9 +7,9 @@ import shutil
 import argparse
 from pathlib import Path
 
-from src.read_json import read_json
-from src.image_translator import ImageTranslator
-from src.chatgpt_communicator import ChatGPTCommunicator
+from api.utils.read_json import read_json
+from api.utils.image_translator import ImageTranslator
+from api.utils.chatgpt_communicator import ChatGPTCommunicator
 
 
 def main(args):
