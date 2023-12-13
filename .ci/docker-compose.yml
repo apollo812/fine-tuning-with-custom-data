@@ -4,15 +4,15 @@ services:
   unit:
     build:
       context: ..
-      dockerfile: api/Dockerfile
+      dockerfile: src/Dockerfile
       target: test
     volumes:
-      - ../api:/home/user/api
+      - ../src:/home/user/src
 
   integration:
     build:
       context: ..
-      dockerfile: api/Dockerfile
+      dockerfile: src/Dockerfile
       target: test
     volumes:
-      - ../api:/home/user/api
+      - ../src:/home/user/src

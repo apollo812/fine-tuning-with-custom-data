@@ -20,6 +20,7 @@ from PIL import Image
 import json
 
 from utils.pdf2img import pdf2img
+from utils.construct_index import construct_index
 
 # Create a FastAPI application
 app = FastAPI(swagger_ui_parameters={"tryItOutEnabled": True})
@@ -30,11 +31,18 @@ app = FastAPI(swagger_ui_parameters={"tryItOutEnabled": True})
 async def root():
     return RedirectResponse(app.docs_url)
 
-@app.post("/pdf2img", status_code=HTTP_201_CREATED)
-async def p2i(pdf_name: str):
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path  = os.path.join(current_dir, "pdfs", f'{pdf_name}.pdf')
-    r = pdf2img(file_path, current_dir, pdf_name)
+# @app.post("/pdf2img", status_code=HTTP_201_CREATED)
+# async def p2i(pdf_name: str):
+#     current_dir = os.path.dirname(os.path.abspath(__file__))
+#     file_path  = os.path.join(current_dir, "pdfs", f'{pdf_name}.pdf')
+#     r = pdf2img(file_path, current_dir, pdf_name)
 
-    print("here", r)
-    return Response(content=r)
+#     print("here", r)
+#     return Response(content=r)
+
+# @app.get("/construct", status_code=HTTP_201_CREATED)
+# async def cindex(file_name: str):
+#     current_dir = os.path.dirname(os.path.abspath(__file__))
+#     # file_path  = os.path.join(current_dir, "pdfs", f'{pdf_name}.pdf')
+#     folder_path  = os.path.join(current_dir, "pdfs")
+#     r = construct_index(folder_path)

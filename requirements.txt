@@ -9,5 +9,9 @@ python-multipart
 python-dotenv
 requests
 Pillow
-openai
+openai==0.27.4
 pdf2image
+gpt_index
+langchain
+llama_index
+pypdf

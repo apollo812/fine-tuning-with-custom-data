@@ -40,7 +40,7 @@ venv\bin\activate
 
 pip install -r requirements.txt
 
-uvicorn api.main:app --reload
+uvicorn src.main:app --reload
 ```
 
 - http://localhost:8000

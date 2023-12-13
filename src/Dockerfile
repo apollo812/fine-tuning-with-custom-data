@@ -1,8 +1,8 @@
 # Dockerfile for api service
-FROM python:3.10.12-slim-bullseye as base
+FROM python:latest as base
 
 # Define a build argument named PROJECT with a default value of 'api'.
-ARG PROJECT=api
+ARG PROJECT=src
 
 RUN apt-get update && apt-get install -y \
     poppler-utils
@@ -34,7 +34,7 @@ COPY --chown=user:user .env /home/user/.env
 USER user
 
 # Define the command to run when the container starts.
-CMD ["python", "-m", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "5000", "--reload", "--env-file", "/home/user/.env"]
+CMD ["python", "-m", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "5000", "--reload", "--env-file", "/home/user/.env"]
 
 # Create a new stage named 'test' based on the 'base' stage.
 FROM base as test

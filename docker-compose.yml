@@ -6,7 +6,7 @@ services:
       - "5000:5000"
     image: gluck0101/oridosai-img2txt:latest
     build:
-      dockerfile: ./api/Dockerfile
+      dockerfile: ./src/Dockerfile
       context: .
     volumes:
-      - ./api:/home/user/api
+      - ./src:/home/user/src
