@@ -4,7 +4,7 @@ import time
 import pytest
 from starlette.testclient import TestClient
 
-from api.main import app  # Import the FastAPI application instance from the main module
+from src.main import app  # Import the FastAPI application instance from the main module
 
 
 # Unit test to check the sanity of the testing setup
