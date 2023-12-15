@@ -1,0 +1,31 @@
+What is the motion manipulation feature in the AI Golf swing analysis tool used for?
+What is the purpose of the phase classification accuracy in the AI Golf Swing Analysis Tool?
+What is the lowest Pearson's correlation coefficient obtained from the S-TCC when using skeleton inputs?
+What method is used in this study to align two temporal sequences in order to make them comparable?
+What are the three parts into which the workflow of the proposed system is divided?
+What are the three main contributions of the proposed golf swing analysis tool?
+What is the title of the paper referenced as [2] in the given context?
+Question: What is the title of the article published in Fusion, volume 80, in April 2022?
+What is the title of the paper mentioned in the context information?
+Question: Which paper proposes the method of "Shuffle and learn: Unsupervised learning using temporal order verification"?
+Question: What are the research interests of Chen-Chieh Liao, based on the provided context?
+What are Hideki Koike's research interests?
+What was the result of the correlation test between the distance in the latent space and the MPJPE?
+What is the purpose of the TCC algorithm in the AI Golf swing analysis tool?
+How does the TCC network detect and retrieve fine-grained motion differences between different swing forms?
+What method was used to retrieve the 3D human poses from golf-swing videos in this study?
+What is the main challenge addressed in the proposed golf swing analysis tool?
+What type of systems have researchers focused on building with neural networks?
+What are the three modules of the proposed golf swing analysis tool?
+What is a challenge in building a system for teaching users to improve their sports skills?
+What are the three types of datasets used in the AI Golf Swing Analysis Tool for Self-Training?
+What method was used to retrieve the time series of 2D human poses from golf-swing videos in this study?
+What type of systems have researchers focused on producing with neural networks?
+What is the purpose of the TCC algorithm in the AI Golf swing analysis tool?
+Question: What is the purpose of the motion discrepancy detector in the AI Golf Swing Analysis Tool?
+Question: What is the purpose of the motion decoder in the AI Golf system?
+What method was used to retrieve the 3D human poses from golf-swing videos in this study?
+What is the main challenge addressed in the proposed golf swing analysis tool?
+What type of systems have researchers focused on producing with neural networks?
+What are the three modules of the proposed golf swing analysis tool?
+What is the challenge in building a sports training system that can teach users to improve their sports skills step-by-step?
