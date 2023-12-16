@@ -5,7 +5,15 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+openai_api_key = os.getenv("OPENAI_API_KEY")
+
+if openai_api_key is not None:
+    os.environ["OPENAI_API_KEY"] = openai_api_key
+else:
+    # Handle the absence of the environment variable
+    # You might want to log an error, raise an exception, or provide a default value
+    # For example, setting a default value
+    os.environ["OPENAI_API_KEY"] = "your_default_api_key"
 
 data_path = "./src/test/regression/regression_test004"
 
