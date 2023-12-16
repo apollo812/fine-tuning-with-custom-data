@@ -1,0 +1,11 @@
+What are the three types of datasets used in the AI Golf Swing Analysis Tool for Self-Training?
+What method was used to retrieve the time series of 2D human poses from golf-swing videos in this study?
+What type of systems have researchers focused on producing with neural networks?
+What is the purpose of the TCC algorithm in the AI Golf swing analysis tool?
+Question: What is the purpose of the motion discrepancy detector in the AI Golf Swing Analysis Tool?
+Question: What is the purpose of the motion decoder in the AI Golf system?
+What method was used to retrieve the 3D human poses from golf-swing videos in this study?
+What is the main challenge addressed in the proposed golf swing analysis tool?
+What type of systems have researchers focused on producing with neural networks?
+What are the three modules of the proposed golf swing analysis tool?
+What is the challenge in building a sports training system that can teach users to improve their sports skills step-by-step?
