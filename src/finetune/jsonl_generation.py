@@ -39,13 +39,16 @@ with open(f'{data_path}/train_questions.txt', "r") as f:
 
 from llama_index import VectorStoreIndex
 
-index = VectorStoreIndex.from_documents(
-    documents, service_context=gpt_4_context
-)
-
-query_engine = index.as_query_engine(similarity_top_k=2)
-for question in questions:
-    response = query_engine.query(question)        
-
-
-finetuning_handler.save_finetuning_events(f'{data_path}/finetuning_events.jsonl')
+try:
+    index = VectorStoreIndex.from_documents(
+        documents, service_context=gpt_4_context
+    )
+    query_engine = index.as_query_engine(similarity_top_k=2)
+    for question in questions:
+        response = query_engine.query(question)
+except Exception as e:
+    # Handle the exception here, you might want to log the error or take appropriate action
+    print(f"An error occurred: {e}")
+finally:
+    if 'finetuning_handler' in locals() and 'data_path' in locals():
+        finetuning_handler.save_finetuning_events(f'{data_path}/finetuning_events.jsonl')

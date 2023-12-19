@@ -32,14 +32,17 @@ while True:
     time.sleep(3)
 
 
-job = openai.fine_tuning.jobs.create(training_file=file_upload.id, model="gpt-3.5-turbo")
+try:
+    job = openai.fine_tuning.jobs.create(training_file=file_upload.id, model="gpt-3.5-turbo")
 
-while True:
-    print("Waiting for fine-tuning to complete...")
-    job_handle = openai.fine_tuning.jobs.retrieve(fine_tuning_job_id=job.id)
-    if job_handle.status == "succeeded":
-        print("Fine-tuning complete")
-        print("Fine-tuned model info", job_handle)
-        print("Model id", job_handle.fine_tuned_model)
-        break
-    time.sleep(3)
+    while True:
+        print("Waiting for fine-tuning to complete...")
+        job_handle = openai.fine_tuning.jobs.retrieve(fine_tuning_job_id=job.id)
+        if job_handle.status == "succeeded":
+            print("Fine-tuning complete")
+            print("Fine-tuned model info", job_handle)
+            print("Model id", job_handle.fine_tuned_model)
+            break
+        time.sleep(3)
+except Exception as e:
+    print(f"An error occurred during fine-tuning: {e}")

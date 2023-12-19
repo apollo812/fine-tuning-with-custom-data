@@ -16,11 +16,7 @@ from fastapi import Depends, FastAPI, File, Response, UploadFile
 from starlette.responses import RedirectResponse
 from starlette.status import HTTP_201_CREATED
 
-from PIL import Image
-import json
-
-from utils.pdf2img import pdf2img
-from utils.construct_index import construct_index
+from finetune.FineTuningClass import FineTuningClass
 
 # Create a FastAPI application
 app = FastAPI(swagger_ui_parameters={"tryItOutEnabled": True})
@@ -31,18 +27,10 @@ app = FastAPI(swagger_ui_parameters={"tryItOutEnabled": True})
 async def root():
     return RedirectResponse(app.docs_url)
 
-# @app.post("/pdf2img", status_code=HTTP_201_CREATED)
-# async def p2i(pdf_name: str):
-#     current_dir = os.path.dirname(os.path.abspath(__file__))
-#     file_path  = os.path.join(current_dir, "pdfs", f'{pdf_name}.pdf')
-#     r = pdf2img(file_path, current_dir, pdf_name)
 
-#     print("here", r)
-#     return Response(content=r)
-
-# @app.get("/construct", status_code=HTTP_201_CREATED)
-# async def cindex(file_name: str):
-#     current_dir = os.path.dirname(os.path.abspath(__file__))
-#     # file_path  = os.path.join(current_dir, "pdfs", f'{pdf_name}.pdf')
-#     folder_path  = os.path.join(current_dir, "pdfs")
-#     r = construct_index(folder_path)
+@app.get("/finetune", status_code=HTTP_201_CREATED)
+async def finetune(api_key: str, data_path: str, model='gpt-3.5-turbo', temperature=0.3, max_retries=5):
+    fine_tune = FineTuningClass(api_key=api_key, data_path=data_path, model=model, temperature=temperature, max_retries=max_retries)
+    fine_tune.train_generation()
+    fine_tune.jsonl_generation()
+    fine_tune.finetune()
