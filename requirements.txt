@@ -18,3 +18,4 @@ pypdf
 spacy
 ragas
 datasets
+docx2txt
