@@ -32,7 +32,7 @@ async def root():
     return RedirectResponse(app.docs_url)
 
 
-@app.get("/finetune", status_code=HTTP_201_CREATED)
+@app.post("/finetune", status_code=HTTP_201_CREATED)
 async def finetune(req_body: FineTuneModel):
     fine_tune = FineTuningClass(api_key=req_body.api_key, data_path=req_body.data_path, model=req_body.model, temperature=req_body.temperature, max_retries=req_body.max_retries)
     fine_tune.train_generation()
@@ -41,7 +41,7 @@ async def finetune(req_body: FineTuneModel):
     return {"model_id": model_id}
 
 
-@app.get("/chatting", status_code=HTTP_201_CREATED)
+@app.post("/chatting", status_code=HTTP_201_CREATED)
 async def chatting(req_body: ChattingModel):
     chatbot = ChattingClass(model_id=req_body.model, data_path=req_body.data_path, api_key=req_body.api_key, temperature=req_body.temperature)
     response = chatbot.ask_question(req_body.question)
