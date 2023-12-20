@@ -52,15 +52,15 @@ class ChattingClass:
 # Using argparse to get the question input from the user
 parser = argparse.ArgumentParser(description='Chatting Engine')
 # parser.add_argument('api_key', type=str, help='Openai API Key')
-# parser.add_argument('data_path', type=str, help='Data Path')
-# parser.add_argument('model_id', type=str, help='model')
+parser.add_argument('data_path', type=str, help='Data Path')
+parser.add_argument('model_id', type=str, help='model')
 parser.add_argument('question', type=str, help='question')
 # parser.add_argument('temperature', type=str, help='temperature')
 args = parser.parse_args()
 
-model_id = 'ft:gpt-3.5-turbo-0613:personal::8XaasBXv'  
-data_path = "./src/test/regression/regression_test003"
-chatbot = ChattingClass(model_id=model_id, data_path=data_path)
+# model_id = 'ft:gpt-3.5-turbo-0613:personal::8XaasBXv'
+# data_path = "./src/test/regression/regression_test003"
+chatbot = ChattingClass(model_id=args.model_id, data_path=args.data_path)
 
 response = chatbot.ask_question(args.question)
 print(response)
