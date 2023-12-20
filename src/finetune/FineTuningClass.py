@@ -188,6 +188,8 @@ class FineTuningClass:
 
                     with open(f'{self.data_path}/generated_data/model.txt', "w") as f:
                         f.write(job_handle.fine_tuned_model + "\n")
+                    
+                    return job_handle.fine_tuned_model
                     break
                 time.sleep(3)
         except Exception as e:
