@@ -15,14 +15,14 @@ else:
     # For example, setting a default value
     os.environ["OPENAI_API_KEY"] = "your_default_api_key"
 
-data_path = "./src/test/regression/regression_test004"
+data_path = "./src/test/regression/regression_test003"
 
 documents = SimpleDirectoryReader(
     data_path
 ).load_data()
 
 questions = []
-with open(f'{data_path}/eval_questions.txt', "r") as f:
+with open(f'{data_path}/generated_data/eval_questions.txt', "r") as f:
     for line in f:
         questions.append(line.strip())
 

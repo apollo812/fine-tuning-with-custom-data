@@ -16,7 +16,7 @@ else:
     os.environ["OPENAI_API_KEY"] = "your_default_api_key"
     openai.api_key = "openai_api_key"
 
-data_path = "./src/test/regression/regression_test004"
+data_path = "./src/test/regression/regression_test003"
 
 model_id = "ft:gpt-3.5-turbo-0613:personal::8XCvxg1X"
 

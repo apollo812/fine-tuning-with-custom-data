@@ -16,7 +16,7 @@ else:
     # For example, setting a default value
     os.environ["OPENAI_API_KEY"] = "your_default_api_key"
 
-data_path = "./src/test/regression/regression_test004"
+data_path = "./src/test/regression/regression_test003"
 
 documents = SimpleDirectoryReader(
     data_path
@@ -33,7 +33,7 @@ gpt_4_context = ServiceContext.from_defaults(
 )
 
 questions = []
-with open(f'{data_path}/train_questions.txt', "r") as f:
+with open(f'{data_path}/generated_data/train_questions.txt', "r") as f:
     for line in f:
         questions.append(line.strip())
 
@@ -50,5 +50,4 @@ except Exception as e:
     # Handle the exception here, you might want to log the error or take appropriate action
     print(f"An error occurred: {e}")
 finally:
-    if 'finetuning_handler' in locals() and 'data_path' in locals():
-        finetuning_handler.save_finetuning_events(f'{data_path}/finetuning_events.jsonl')
+    finetuning_handler.save_finetuning_events(f'{data_path}/generated_data/finetuning_events.jsonl')

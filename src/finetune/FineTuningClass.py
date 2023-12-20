@@ -26,6 +26,7 @@ class FineTuningClass:
         self.retry_delay = 60
         self.set_api_key(api_key)
         self.set_document(data_path)
+        self.generate_subfolder(data_path)
 
     def set_api_key(self, api_key):
         if api_key:
@@ -52,6 +53,10 @@ class FineTuningClass:
             data_path
         ).load_data()
 
+    def generate_subfolder(self, data_path):
+        subfolder_name = "generated_data"
+        subfolder_path = os.path.join(data_path, subfolder_name)
+        os.makedirs(subfolder_path, exist_ok=True)
 
     def train_generation(self):
         for attempt in range(1, self.max_retries + 1):
@@ -84,8 +89,8 @@ class FineTuningClass:
                         for question in questions:
                             f.write(question + "\n")
 
-                generate_and_save_questions(self.documents[:half_point], f'{self.data_path}/train_questions.txt')
-                generate_and_save_questions(self.documents[half_point:], f'{self.data_path}/eval_questions.txt')
+                generate_and_save_questions(self.documents[:half_point], f'{self.data_path}/generated_data/train_questions.txt')
+                generate_and_save_questions(self.documents[half_point:], f'{self.data_path}/generated_data/eval_questions.txt')
 
                 break
             except Exception as e:
@@ -140,7 +145,7 @@ class FineTuningClass:
         )
 
         questions = []
-        with open(f'{self.data_path}/train_questions.txt', "r") as f:
+        with open(f'{self.data_path}/generated_data/train_questions.txt', "r") as f:
             for line in f:
                 questions.append(line.strip())
 
@@ -155,12 +160,11 @@ class FineTuningClass:
             # Handle the exception here, you might want to log the error or take appropriate action
             print(f"An error occurred: {e}")
         finally:
-            if 'finetuning_handler' in locals() and 'data_path' in locals():
-                finetuning_handler.save_finetuning_events(f'{self.data_path}/finetuning_events.jsonl')
+            finetuning_handler.save_finetuning_events(f'{self.data_path}/generated_data/finetuning_events.jsonl')
 
         
     def finetune(self):
-        file_upload = openai.files.create(file=open(f'{self.data_path}/finetuning_events.jsonl', "rb"), purpose="fine-tune")
+        file_upload = openai.files.create(file=open(f'{self.data_path}/generated_data/finetuning_events.jsonl', "rb"), purpose="fine-tune")
         print("Uploaded file id", file_upload.id)
 
         while True:
@@ -182,7 +186,7 @@ class FineTuningClass:
                     print("Fine-tuned model info", job_handle)
                     print("Model id", job_handle.fine_tuned_model)
 
-                    with open(f'{self.data_path}/model.txt', "w") as f:
+                    with open(f'{self.data_path}/generated_data/model.txt', "w") as f:
                         f.write(job_handle.fine_tuned_model + "\n")
                     break
                 time.sleep(3)

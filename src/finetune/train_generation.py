@@ -15,7 +15,7 @@ if openai_api_key is not None:
 else:
     os.environ["OPENAI_API_KEY"] = "your_default_api_key"
 
-data_path = "./src/test/regression/regression_test004"
+data_path = "./src/test/regression/regression_test003"
 
 max_retries = 5
 retry_delay = 60  # in seconds
@@ -54,8 +54,8 @@ for attempt in range(1, max_retries + 1):
                 for question in questions:
                     f.write(question + "\n")
 
-        generate_and_save_questions(documents[:half_point], f'{data_path}/train_questions.txt')
-        generate_and_save_questions(documents[half_point:], f'{data_path}/eval_questions.txt')
+        generate_and_save_questions(documents[:half_point], f'{data_path}/generated_data/train_questions.txt')
+        generate_and_save_questions(documents[half_point:], f'{data_path}/generated_data/eval_questions.txt')
 
         break
     except Exception as e:

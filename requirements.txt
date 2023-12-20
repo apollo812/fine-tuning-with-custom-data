@@ -19,3 +19,4 @@ spacy
 ragas
 datasets
 docx2txt
+cryptography

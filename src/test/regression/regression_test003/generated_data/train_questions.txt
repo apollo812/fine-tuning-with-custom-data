@@ -1,0 +1,10 @@
+What was the motion manipulation technique used in the AI Golf swing analysis tool?
+Question: What is the purpose of the TCC algorithm in the AI Golf swing analysis tool?
+Question: What is the purpose of the motion discrepancy detector in the AI Golf Swing Analysis Tool?
+Question: What is the method proposed in the study to improve users' forms by comparing their motions with those of professionals?
+What is the purpose of the proposed system described in the context?
+Question: What are the three main contributions of the proposed golf swing analysis tool described in the context?
+Question: What is the main purpose of the proposed application for analyzing and visualizing golf swing motions?
+Question: What is the title of the paper mentioned in reference [7] and what is its subject matter?
+What is the phase classification accuracy metric used to evaluate the network's ability to classify motion frames to their corresponding phases?
+What was the lowest Pearson's correlation coefficient obtained from the S-TCC model when using skeleton inputs?

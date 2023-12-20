@@ -18,9 +18,9 @@ else:
     os.environ["OPENAI_API_KEY"] = "your_default_api_key"
     openai.api_key = "openai_api_key"
 
-data_path = "./src/test/regression/regression_test004"
+data_path = "./src/test/regression/regression_test003"
 
-file_upload = openai.files.create(file=open(f'{data_path}/finetuning_events.jsonl', "rb"), purpose="fine-tune")
+file_upload = openai.files.create(file=open(f'{data_path}/generated_data/finetuning_events.jsonl', "rb"), purpose="fine-tune")
 print("Uploaded file id", file_upload.id)
 
 while True:

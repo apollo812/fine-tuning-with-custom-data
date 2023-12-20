@@ -59,7 +59,7 @@ parser.add_argument('question', type=str, help='question')
 args = parser.parse_args()
 
 model_id = 'ft:gpt-3.5-turbo-0613:personal::8XaasBXv'  
-data_path = "./src/test/regression/regression_test004"
+data_path = "./src/test/regression/regression_test003"
 chatbot = ChattingClass(model_id=model_id, data_path=data_path)
 
 response = chatbot.ask_question(args.question)
