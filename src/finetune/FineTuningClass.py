@@ -195,17 +195,17 @@ class FineTuningClass:
         except Exception as e:
             print(f"An error occurred during fine-tuning: {e}")
 
-# Using argparse to get the question input from the user
-parser = argparse.ArgumentParser(description='Fine Tune')
-# parser.add_argument('api_key', type=str, help='Openai API Key')
-parser.add_argument('data_path', type=str, help='Data Path')
-# parser.add_argument('model', type=str, help='model')
-# parser.add_argument('temperature', type=str, help='temperature')
-# parser.add_argument('max_retries', type=str, help='max_retries')
-args = parser.parse_args()
+# # Using argparse to get the question input from the user
+# parser = argparse.ArgumentParser(description='Fine Tune')
+# # parser.add_argument('api_key', type=str, help='Openai API Key')
+# parser.add_argument('data_path', type=str, help='Data Path')
+# # parser.add_argument('model', type=str, help='model')
+# # parser.add_argument('temperature', type=str, help='temperature')
+# # parser.add_argument('max_retries', type=str, help='max_retries')
+# args = parser.parse_args()
 
 
-fine_tune = FineTuningClass(data_path=args.data_path)
-fine_tune.train_generation()
-fine_tune.jsonl_generation()
-fine_tune.finetune()
+# fine_tune = FineTuningClass(data_path=args.data_path)
+# fine_tune.train_generation()
+# fine_tune.jsonl_generation()
+# fine_tune.finetune()

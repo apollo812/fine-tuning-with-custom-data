@@ -33,8 +33,8 @@ async def root():
 
 
 @app.get("/finetune", status_code=HTTP_201_CREATED)
-async def finetune(body: FineTuneModel):
-    fine_tune = FineTuningClass(api_key=body.api_key, data_path=body.data_path, model=body.model, temperature=body.temperature, max_retries=body.max_retries)
+async def finetune(req_body: FineTuneModel):
+    fine_tune = FineTuningClass(api_key=req_body.api_key, data_path=req_body.data_path, model=req_body.model, temperature=req_body.temperature, max_retries=req_body.max_retries)
     fine_tune.train_generation()
     fine_tune.jsonl_generation()
     model_id = fine_tune.finetune()
@@ -42,8 +42,8 @@ async def finetune(body: FineTuneModel):
 
 
 @app.get("/chatting", status_code=HTTP_201_CREATED)
-async def chatting(body: ChattingModel):
-    chatbot = ChattingClass(model_id=body.model_id, data_path=body.data_path, api_key=body.api_key, temperature=body.temperature)
-    response = chatbot.ask_question(body.question)
+async def chatting(req_body: ChattingModel):
+    chatbot = ChattingClass(model_id=req_body.model, data_path=req_body.data_path, api_key=req_body.api_key, temperature=req_body.temperature)
+    response = chatbot.ask_question(req_body.question)
     print(response)
     return {"answer": response}
