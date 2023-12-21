@@ -22,7 +22,9 @@ FROM base as dev
 USER root
 # Copy the requirements.txt file and install the Python dependencies.
 COPY --chown=user:user ./requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install openai==1.1.0 \
+    pip install llama_index==0.9.15 \
+    pip install --no-cache-dir -r requirements.txt
 
 # Copy the project files into the container.
 COPY --chown=user:user ./$PROJECT /home/user/$PROJECT
@@ -41,7 +43,9 @@ FROM base as test
 
 # Copy the requirements.txt file and install the Python dependencies.
 COPY --chown=user:user ./requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install openai==1.1.0 \
+    pip install llama_index==0.9.15 \
+    pip install --no-cache-dir -r requirements.txt
 
 USER root
 # Copy the project files into the container.
