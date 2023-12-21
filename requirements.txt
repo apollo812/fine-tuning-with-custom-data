@@ -9,7 +9,7 @@ python-multipart
 python-dotenv
 requests
 Pillow
-openai>=1.1.0
+openai==1.1.0
 pdf2image
 gpt_index
 langchain
