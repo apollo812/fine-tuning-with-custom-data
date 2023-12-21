@@ -9,11 +9,11 @@ python-multipart
 python-dotenv
 requests
 Pillow
-openai
+openai==1.1.0
 pdf2image
 gpt_index
 langchain
-llama_index==0.9.17
+llama_index==0.9.19
 pypdf
 spacy
 ragas
