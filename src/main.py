@@ -16,8 +16,8 @@ from fastapi import Depends, FastAPI, File, Response, UploadFile
 from starlette.responses import RedirectResponse
 from starlette.status import HTTP_201_CREATED
 
-from finetune.FineTuningClass import FineTuningClass
-from chatting.ChattingClass import ChattingClass
+# from finetune.FineTuningClass import FineTuningClass
+# from chatting.ChattingClass import ChattingClass
 
 # from models.finetune_model import FineTuneModel
 # from models.chatting_model import ChattingModel
