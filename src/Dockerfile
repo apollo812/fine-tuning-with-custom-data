@@ -1,5 +1,5 @@
 # Dockerfile for api service
-FROM python:3.11.0 as base
+FROM python:3.10.13-bullseye as base
 
 # Define a build argument named PROJECT with a default value of 'api'.
 ARG PROJECT=src
