@@ -2,8 +2,8 @@ import os
 import openai
 import random
 import time
-import asyncio
-import argparse
+import json
+from itertools import cycle
 
 from llama_index import SimpleDirectoryReader, ServiceContext, VectorStoreIndex
 from llama_index.llms import OpenAI
@@ -76,21 +76,34 @@ class FineTuningClass:
                     "context. Restrict the question to the context information provided."
                 )
 
-                def generate_and_save_questions(documents, output_file):
+                def generate_and_save_questions(documents, output_file, num_questions):
                     dataset_generator = DatasetGenerator.from_documents(
                         documents,
                         question_gen_query=question_gen_query,
                         service_context=gpt_35_context
                     )
-                    questions = dataset_generator.generate_questions_from_nodes(num=40)
+                    questions = []
+                    # Create an iterator that cycles through available documents
+                    documents_cycle = cycle(documents)
+                    
+                    # Generate questions until reaching the desired count
+                    while len(questions) < num_questions:
+                        # Use the next document in the cycle
+                        next_document = next(documents_cycle)
+                        dataset_generator = dataset_generator.from_documents([next_document])
+                        
+                        # Generate questions from the updated dataset
+                        new_questions = dataset_generator.generate_questions_from_nodes(num=num_questions - len(questions))
+                        questions.extend(new_questions)
+                        
                     print(f"Generated {len(questions)} questions")
-
+                    
                     with open(output_file, "w") as f:
                         for question in questions:
                             f.write(question + "\n")
 
-                generate_and_save_questions(self.documents[:half_point], f'{self.data_path}/generated_data/train_questions.txt')
-                generate_and_save_questions(self.documents[half_point:], f'{self.data_path}/generated_data/eval_questions.txt')
+                generate_and_save_questions(self.documents[:half_point], f'{self.data_path}/generated_data/train_questions.txt', 40)
+                generate_and_save_questions(self.documents[half_point:], f'{self.data_path}/generated_data/eval_questions.txt', 40)
 
                 break
             except Exception as e:
@@ -189,23 +202,18 @@ class FineTuningClass:
                     with open(f'{self.data_path}/generated_data/model.txt', "w") as f:
                         f.write(job_handle.fine_tuned_model + "\n")
                     
+                    # Load the JSON data from the file
+                    with open(f'{self.data_path}/payload/chatting_payload.json', 'r') as file:
+                        payload = json.load(file)
+
+                    # Update the model_id with specific data
+                    payload['model_id'] = job_handle.fine_tuned_model
+
+                    # Write the updated JSON back to the file
+                    with open(f'{self.data_path}/payload/chatting_payload.json', 'w') as file:
+                        json.dump(payload, file, indent=4)
+
                     return job_handle.fine_tuned_model
-                    break
                 time.sleep(3)
         except Exception as e:
             print(f"An error occurred during fine-tuning: {e}")
-
-# # Using argparse to get the question input from the user
-# parser = argparse.ArgumentParser(description='Fine Tune')
-# # parser.add_argument('api_key', type=str, help='Openai API Key')
-# parser.add_argument('data_path', type=str, help='Data Path')
-# # parser.add_argument('model', type=str, help='model')
-# # parser.add_argument('temperature', type=str, help='temperature')
-# # parser.add_argument('max_retries', type=str, help='max_retries')
-# args = parser.parse_args()
-
-
-# fine_tune = FineTuningClass(data_path=args.data_path)
-# fine_tune.train_generation()
-# fine_tune.jsonl_generation()
-# fine_tune.finetune()

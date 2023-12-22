@@ -1,0 +1,6 @@
+{
+    "api_key": null,
+    "data_path": "test/regression/regression_test007",
+    "model_id": "ft:gpt-3.5-turbo-0613:personal::8YLDZlua",
+    "temperature": 0.3
+}

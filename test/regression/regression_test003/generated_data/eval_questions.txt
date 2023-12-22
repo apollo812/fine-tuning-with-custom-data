@@ -1,0 +1,40 @@
+What is the purpose of the V-TCC model in the AI Golf swing analysis tool?
+How does the removal of background information affect the accuracy of the V-TCC model?
+Why did the skeleton version (S-TCC and SA-TCC) outperform the video version (V-TCC) in phase classification accuracy?
+What is the significance of using skeleton data for more precise implementation in actual usage?
+How does the correlation test demonstrate the network's ability to detect discrepancies between two motions?
+What factors might influence the synchronization quality of the TCC implementation?
+Why is background subtraction necessary when building applications for real usage?
+How does the network's focus on other motion features impact the distance in the latent space?
+What is the main factor causing the enormous distance in the latent space during the golf swing analysis?
+How does the density and radius of red spheres indicate the degree of joint position difference between the user's pose and the expert's pose?
+What is the title of the research paper mentioned in the context information?
+Who are the authors of the research paper?
+What is the main focus of the research paper?
+What is the purpose of the AI Golf tool mentioned in the context information?
+What are some of the techniques used in the AI Golf tool for self-training?
+How does the AI Golf tool enhance complex motor task learning?
+What is the significance of sonification and haptic feedback in the AI Golf tool?
+How does the Subtletee system augment posture awareness for beginner golfers?
+What is the role of the decayed dynamic time warping algorithm in the AR-based self-sports learning system?
+How does the AI Golf tool utilize deep learning techniques for swing analysis?
+What is the purpose of the motion decoder in the AI Golf system?
+How is the intermediate motion between two points in the latent space retrieved?
+What are the four different conditions under which statistical analysis was conducted in the experimental setup?
+How was the video dataset used in the study collected and processed?
+What is the significance of creating a video dataset without background information?
+How were 3D human pose datasets created for more precise analysis?
+What evaluation metric was used to measure the precision of alignment in the trained network?
+What is the key event and phase labeling used in the accuracy metric?
+How was the TCC loss used to train the network in the self-supervised learning method?
+What is the purpose of the SA-TCC model in the AI Golf system?
+What is the main challenge addressed in the study of the AI Golf Swing Analysis Tool?
+How does the proposed system help users understand the differences between themselves and professional players?
+What is the significance of using an unsupervised learning method in the proposed approach?
+How are neural networks used in the proposed system?
+What is the purpose of the motion synchronizer in the proposed system?
+How does the motion discrepancy detector work in the proposed system?
+Why is learning intermediate motions considered feasible for beginners?
+What is the role of the decoder in the proposed system?
+How does the proposed application help users improve their motions during self-training?
+What are the key terms associated with the study, according to the index terms provided?

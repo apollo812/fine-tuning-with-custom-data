@@ -1,0 +1,40 @@
+What is the purpose of the AI Golf swing analysis tool?
+How does the SA-TCC network compare to the S-TCC network in terms of performance?
+What is the advantage of using the attention module in the skeleton model?
+How does the motion decoder demonstrate its ability to generate new human poses?
+What can be inferred about the arrangement of human poses in the latent space?
+How does the motion decoder generate meaningful intermediate poses?
+What are the potential applications of the proposed method?
+How can the motion synchronizer, motion discrepancy detector, and motion manipulator be combined?
+What is the significance of the Pearson's correlation coefficient in evaluating the skeleton models?
+How does the motion manipulation feature work in the AI Golf swing analysis tool?
+What is the purpose of the TCC algorithm in the AI Golf swing analysis tool?
+How does the encoder network compress motion sequences in the TCC algorithm?
+What are the three types of networks implemented in the base networks for the TCC algorithm?
+How does the SA-TCC network differ from the S-TCC network in terms of input?
+What is the purpose of the self-attention mechanism in the SA-TCC network?
+How does the motion discrepancy detector in the AI Golf swing analysis tool detect fine-grained motion differences?
+What is the significance of the frame-by-frame distance vector in the motion discrepancy detector?
+How does the TCC network synchronize input sequences?
+What is the role of the embedder network in the TCC algorithm?
+How does the TCC algorithm align video inputs with different phasing and timing?
+What is the purpose of the AI Golf system described in the document?
+How does the system align two temporal sequences in order to compare them?
+What is the difference between the two approaches to abnormal detection mentioned in the document?
+How does the motion synchronization process work in the proposed system?
+What is the role of the motion discrepancy detector in the system?
+How does the motion manipulator integrate the synchronized motions and the distance vector?
+What is the purpose of the motion synchro-nizer in the AI Golf system?
+How does the system use the latent space to compare user motions with those of professionals?
+What is the role of the decoder in the system?
+How does the system help users improve their motion forms?
+What is the purpose of the proposed golf swing analysis tool?
+How does the motion synchronizer align motions with different phases and timings?
+What is the role of the motion discrepancy detector in the analysis tool?
+How does the proposed SA-TCC network outperform the previous TCC network?
+What is the function of the motion manipulator in the tool?
+How does the tool help users understand the difference between their swings and those of professional players?
+What is the potential benefit of using a high-quality motion capture system in the proposed system?
+How does the proposed tool aim to help users learn an ideal form in a gradual manner?
+What are some potential future applications of the proposed method beyond golf swing analysis?
+How does the proposed tool incorporate user feedback and interaction during self-training?

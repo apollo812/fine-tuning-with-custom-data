@@ -1,0 +1,5 @@
+Question: What are the two types of coordinate systems used to describe fluid flow in the context of the Navier-Stokes equations?
+Question: What is the relationship between the Lagrangian and Eulerian coordinates in the context of fluid dynamics?
+Question: What is the formula for the material derivative of an integral in the Eulerian coordinate system?
+Question: What is the equation that represents the conservation of mass in fluid dynamics, as derived in the given context?
+Question: What is the condition for a fluid to be considered incompressible?

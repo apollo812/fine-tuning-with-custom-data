@@ -1,0 +1,5 @@
+Question: What is the simplified form of the momentum equation for incompressible fluid, according to the provided context information?
+Question: What is the equation that completes the system of conservation equations for fluid dynamics, including the conservation of mass and momentum?
+Question: What are the three main difficulties associated with the Navier-Stokes equations?
+Question: What is the advantage of using the vorticity-velocity formulation in fluid dynamics?
+Question: What is the defining characteristic of an incompressible fluid according to the context information?

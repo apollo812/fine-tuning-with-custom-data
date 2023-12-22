@@ -1,32 +1,3 @@
-# img2txt-fine-tuning-api
-Image to text translator using Open AI vision API
-
-
-Before installing the project, ensure you have Python 3.x installed on your system.
-
-### Clone the Repository
-```bash
-git clone https://github.com/oridosai/img2txt-fine-tuning-api.git
-cd img2txt-fine-tuning-api
-```
-
-### Install Dependencies
-```bash
-pip install . 
-```
-
-## Usage
-
-To run the application, use the following command from the project directory:
-```bash
-python3 main.py --payload_dir <your_payload_dir>
-```
-
-## Modules
-
-- **Image Translator**: Handles image processing and image translation tasks (convert image to text)
-- **ChatGPT Communicator**: Manages communication with ChatGPT-like services and pass the output of Image Translator to revise the output or ask any specific questions (this is optional)
-
 ## Manual
 
 ```
@@ -40,20 +11,33 @@ venv\bin\activate
 
 pip install -r requirements.txt
 
-uvicorn src.main:app --reload
 ```
 
-- http://localhost:8000
+## Step-by-step
 
-## Using Docker
+### Fine Tuning with specific data
+- Generate the new folder at src\test\regression\regression_testxxx
+Copy and paste the files at here
 
-### Build
-```make build```
+- Fine Tuning
+```
+py .\finetuning.py --payload_dir="payload_dir" 
 
-### Test
-```make test```
+example: 
+py .\finetuning.py --payload_dir="./test/regression/regression_testxxx/payload/finetuning_payload.json"  
+```
 
-### Run
-```make up``` 
+- After fine tuning, you will get the model id, you can check the model_id at console or data_path/generated_data/model.txt
+- Please check the "./test/regression/regression_testxxx/payload/chatting_payload.json"
+After successfully complete the fine tuning, will update the model_id automatically.
+If you want to update this, please change the model_id with your specific id.
 
-- http://localhost:5000
+### Conversational Agent
+```
+py .\chatting.py --payload_dir="payload_dir" --question="question"
+
+example: 
+py .\chatting.py --payload_dir="./test/regression/regression_testxxx/payload/chatting_payload.json" --question="what's the golf?"
+```
+
+You will see the result at console.

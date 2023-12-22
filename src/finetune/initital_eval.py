@@ -15,7 +15,7 @@ else:
     # For example, setting a default value
     os.environ["OPENAI_API_KEY"] = "your_default_api_key"
 
-data_path = "./src/test/regression/regression_test003"
+data_path = "./test/regression/regression_test003"
 
 documents = SimpleDirectoryReader(
     data_path

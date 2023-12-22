@@ -10,7 +10,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "openai",
-        "requests"
+        "requests",
         "python-dotenv"
     ],
 )
